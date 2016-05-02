@@ -51,6 +51,8 @@ public class AccountController {
     @PreAuthorize("permitAll")
     public ResponseEntity<AccountListResource> findAllAccounts(@RequestParam(value="name", required = false) String name, @RequestParam(value="password", required = false) String password) {
         AccountList list = null;
+
+       System.out.println("Came into account");
         if(name == null) {
             list = accountService.findAllAccounts();
         } else {

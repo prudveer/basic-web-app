@@ -324,8 +324,8 @@ angular.module("account/search.tpl.html", []).run(["$templateCache", function($t
     "    <table class=\"table table-striped\">\n" +
     "        <th>Account Name</th>\n" +
     "        <th>Actions</th>\n" +
-    "        <tr ng-repeat=\"account in accounts | filter:q\">\n" +
-    "            <td>{{account.name}}</td>\n" +
+    "        <tr ng-repeat=\"blog in blogs | filter:q\">\n" +
+    "            <td>{{blog.name}}</td>\n" +
     "            <td>\n" +
     "                <a ui-sref=\"manageBlogs({accountId:account.rid})\" class=\"btn btn-large btn-default\">\n" +
     "                    Manage\n" +
@@ -369,51 +369,16 @@ angular.module("blog/manage-blogs.tpl.html", []).run(["$templateCache", function
 angular.module("home/home.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("home/home.tpl.html",
     "<div class=\"jumbotron\">\n" +
-    "  <h1>Non-Trivial AngularJS Made Easy</h1>\n" +
+    "  <h1>BakerHaus</h1>\n" +
     "\n" +
     "  <p class=\"lead\">\n" +
-    "    Everything you need to kickstart AngularJS projects: a best-practice\n" +
-    "    directory structure, an intelligent build system, and the best web design\n" +
-    "    libraries around.\n" +
+    "    Enter what ever you want\n" +
     "  </p>\n" +
     "\n" +
-    "  <ul class=\"list-inline social-buttons\">\n" +
-    "    <li>\n" +
-    "      <iframe \n" +
-    "        src=\"http://ghbtns.com/github-btn.html?user=ngbp&amp;repo=ngbp&amp;type=watch&amp;count=true\" \n" +
-    "        allowtransparency=\"true\" \n" +
-    "        frameborder=\"0\" \n" +
-    "        scrolling=\"0\" \n" +
-    "        width=\"110\" \n" +
-    "        height=\"20\">\n" +
-    "      </iframe>\n" +
-    "    </li>\n" +
-    "    <li>\n" +
-    "      <iframe \n" +
-    "        src=\"http://ghbtns.com/github-btn.html?user=ngbp&amp;repo=ngbp&amp;type=fork&amp;count=true\" \n" +
-    "        allowtransparency=\"true\" \n" +
-    "        frameborder=\"0\" \n" +
-    "        scrolling=\"0\" \n" +
-    "        width=\"95\" \n" +
-    "        height=\"20\">\n" +
-    "      </iframe>\n" +
-    "    </li>\n" +
-    "    <li>\n" +
-    "       <iframe allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"\n" +
-    "        src=\"https://platform.twitter.com/widgets/tweet_button.html?url=http%3A%2F%2Fbit.ly%2FngBoilerplate&counturl=http%3A%2F%2Fngbp.github.com%2Fngbp&text=Check%20out%20%23ngbp%20-%20an%20awesome%20kickstarter%20for%20web%20projects%20%7C&hashtags=angularjs&via=joshdmiller&related=joshdmiller\"\n" +
-    "        style=\"width:130px; height:20px;\"></iframe>\n" +
-    "    </li>\n" +
-    "    <li plus-one></li>\n" +
-    "  </ul> \n" +
-    "  \n" +
     "  <div class=\"btn-group\" ng-hide=\"isLoggedIn()\">\n" +
     "    <a ui-sref=\"login\" class=\"btn btn-large btn-default\">\n" +
     "      <i class=\"fa fa-book\"></i>\n" +
     "      Login\n" +
-    "    </a>\n" +
-    "    <a ui-sref=\"register\" class=\"btn btn-large btn-success\">\n" +
-    "      <i class=\"fa fa-download\"></i>\n" +
-    "      Register\n" +
     "    </a>\n" +
     "  </div>\n" +
     "\n" +
@@ -423,89 +388,280 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "            Logout\n" +
     "        </a>\n" +
     "    </div>\n" +
-    "\n" +
-    "\n" +
     "</div>\n" +
     "\n" +
-    "<div class=\"marketing\">\n" +
+    "<div class=\"container shadow\">\n" +
     "  <div class=\"row\">\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-thumbs-up\"></i> Good to Go!</h4>\n" +
-    "      <p>\n" +
-    "        Kickstarts your project quickly, with everything you need, so you can \n" +
-    "        focus on what matters: your app.\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-magic\"></i> Complete Build System</h4>\n" +
-    "      <p>\n" +
-    "        A smart, <a href=\"http://gruntjs.com\">Grunt</a>-based build system \n" +
-    "        designed to save you time and energy.\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-retweet\"></i> Modularization</h4>\n" +
-    "      <p>\n" +
-    "        Supports a structure that maintains separation of concerns while\n" +
-    "        ensuring maximum code reuse.\n" +
-    "      </p>\n" +
+    "    <div class=\"col-lg-12\">\n" +
+    "      <br>\n" +
+    "      <h3 align=\"center\">ADD ACCOUNT</h3>\n" +
     "    </div>\n" +
     "  </div>\n" +
-    "  <div class=\"row\">\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-star\"></i> AngularJS</h4>\n" +
-    "      <p>\n" +
-    "        JavaScript framework that augments browser-based, single-page \n" +
-    "        applications with MVC functionality.\n" +
-    "        <a href=\"http://angularjs.org\">More &raquo;</a>\n" +
-    "      </p>\n" +
+    "  <div class=\"panel panel-primary panel-size col-lg-offset-1\" ng-controller=\"HomeCtrl\">\n" +
+    "    <div class=\"panel-heading\">\n" +
+    "      <h3 class=\"panel-title\">Account Information</h3>\n" +
     "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-resize-small\"></i> LESS CSS</h4>\n" +
-    "      <p>\n" +
-    "        The dynamic stylesheet language that extends CSS with efficiency.\n" +
-    "        <a href=\"http://lesscss.org\">More &raquo;</a>\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-twitter\"></i> Twitter Bootstrap</h4>\n" +
-    "      <p>\n" +
-    "        Sleek, intuitive, and powerful front-end framework for faster and easier\n" +
-    "        web development.\n" +
-    "        <a href=\"http://getbootstrap.com\">More &raquo;</a>\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "  </div>\n" +
-    "  <div class=\"row\">\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-circle\"></i> Angular UI Bootstrap</h4>\n" +
-    "      <p>\n" +
-    "        Pure AngularJS components for Bootstrap written by the \n" +
-    "        <a href=\"https://github.com/angular-ui?tab=members\">AngularUI Team</a>.\n" +
-    "        <a href=\"http://angular-ui.github.com/bootstrap\">More &raquo;</a>\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-flag\"></i> Font Awesome</h4>\n" +
-    "      <p>\n" +
-    "        The iconic font designed for use with Twitter Bootstrap.\n" +
-    "        <a href=\"http://fortawesome.github.com/Font-Awesome\">\n" +
-    "          More &raquo;\n" +
-    "        </a>\n" +
-    "      </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"col-xs-12 col-sm-6 col-md-4\">\n" +
-    "      <h4><i class=\"fa fa-asterisk\"></i> Placeholders</h4>\n" +
-    "      <p>\n" +
-    "        Client-side image and text placeholder directives written in pure \n" +
-    "        AngularJS to make designing mock-ups wicked-fast.\n" +
-    "        <a href=\"http://joshdmiller.github.com/angular-placeholders\">\n" +
-    "          More &raquo;\n" +
-    "        </a>\n" +
-    "      </p>\n" +
-    "    </div>\n" +
+    "\n" +
+    "    <form name=\"addAccountForm\" ng-submit=\"insertAccount()\" novalidate=\"novalidate\">\n" +
+    "      <div class=\"panel-body\">\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label for=\"name\" class=\"control-label\"><span class=\"required-field\">*</span>Freight Invoice No</label>\n" +
+    "              <input class=\"form-control\"\n" +
+    "                     id=\"name\"\n" +
+    "                     name=\"name\"\n" +
+    "                     type=\"text\"\n" +
+    "                     placeholder=\"Freight Invoice No\"\n" +
+    "                     ng-model=\"FreightInvoiceNo\"\n" +
+    "                     required>\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <br>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Date</label><br>\n" +
+    "              <input class=\"form-control\"\n" +
+    "                     type=\"DATE\"\n" +
+    "                     placeholder=\"Date\"\n" +
+    "                     ng-model=\"date\">\n" +
+    "            </div>\n" +
+    "            <!--<div class=\"col-md-6\">\n" +
+    "              <label>Phone Number</label> <br>\n" +
+    "              <input class=\"form-control\"\n" +
+    "                     type=\"tel\"\n" +
+    "                     placeholder=\"Phone Number\"\n" +
+    "                     ng-model=\"phone\"\n" +
+    "                     ng-pattern=\"/^\\+?\\d{3}[- ]?\\d{3}[- ]?\\d{4}$/\"\n" +
+    "                     ng-pattern-err-type=\"badPhoneNumber\">\n" +
+    "            </div>-->\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <br>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Freight Charge CDN$:</label>\n" +
+    "              <input class=\"form-control\"\n" +
+    "                     type=\"text\"\n" +
+    "                     placeholder=\"Freight Charge CDN$\"\n" +
+    "                     ng-model=\"FreightChargeCDN\">\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <br>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Lumper Fees CDN$:</label>\n" +
+    "              <input class=\"form-control\"\n" +
+    "                     type=\"text\"\n" +
+    "                     placeholder=\"Lumper Fees CDN$\"\n" +
+    "                     ng-model=\"LumperFeesCDN\">\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <br>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>HST TAX CDN$:</label>\n" +
+    "              <input class=\"form-control\"\n" +
+    "                     type=\"text\"\n" +
+    "                     placeholder=\"HST TAX CDN$\"\n" +
+    "                     ng-model=\"HSTTAXCDN\">\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <br>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Remarks:</label>\n" +
+    "              <input class=\"form-control\"\n" +
+    "                     type=\"text\"\n" +
+    "                     placeholder=\"Remarks:\"\n" +
+    "                     ng-model=\"Remarks\">\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "        <!--<div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Headquarters</label>\n" +
+    "              <input class=\"form-control\" type=\"text\" placeholder=\"Headquarters\" ng-model=\"headquarters\">\n" +
+    "            </div>\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Doing Business as</label>\n" +
+    "              <input class=\"form-control\" type=\"text\" placeholder=\"Doing Business as\" ng-model=\"dbaName\">\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <br>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>No of Employees</label>\n" +
+    "              <input class=\"form-control\"\n" +
+    "                     type=\"text\"\n" +
+    "                     placeholder=\"No of employess\"\n" +
+    "                     ng-model=\"numberOfEmployees\"\n" +
+    "                     ng-pattern=\"/^[0-9]*$/\"\n" +
+    "                     ng-pattern-err-type=\"badNumber\">\n" +
+    "            </div>\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Annual Revenue ($)</label>\n" +
+    "              <input class=\"form-control\"\n" +
+    "                     type=\"text\"\n" +
+    "                     placeholder=\"Annual revenue\"\n" +
+    "                     ng-model=\"annualRevenue\"\n" +
+    "                     ng-pattern=\"/^[0-9]*$/\"\n" +
+    "                     ng-pattern-err-type=\"badNumber\">\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <br>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Logo</label>\n" +
+    "              <input class=\"form-control\"\n" +
+    "                     type=\"text\"\n" +
+    "                     placeholder=\"Logo URL\"\n" +
+    "                     ng-model=\"logo\"\n" +
+    "                     ng-pattern=\"/(ftp|http|https):\\/\\/[^ ]+\\.(jpeg|jpg|gif|png)$/\"\n" +
+    "                     ng-pattern-err-type=\"badLogo\">\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <br>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"col-md-12\">\n" +
+    "            <h3>Address</h3>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Line 1</label>\n" +
+    "              <input class=\"form-control\" type=\"text\" placeholder=\"Line 1\" ng-model=\"line1\">\n" +
+    "            </div>\n" +
+    "\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Line 2</label>\n" +
+    "              <input class=\"form-control\" type=\"text\" placeholder=\"Line 2\" ng-model=\"line2\">\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <br>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>City</label>\n" +
+    "              <input class=\"form-control\" type=\"text\" placeholder=\"City\" ng-model=\"city\">\n" +
+    "            </div>\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Zip Code</label>\n" +
+    "              <input class=\"form-control\"\n" +
+    "                     type=\"text\"\n" +
+    "                     placeholder=\"Zip Code\"\n" +
+    "                     ng-model=\"zipCode\"\n" +
+    "                     ng-pattern=\"/^[0-9]{5}(?:-[0-9]{4})?$/\"\n" +
+    "                     ng-pattern-err-type=\"badZipCode\">\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "        <br>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>State</label>\n" +
+    "              <select class=\"form-control\" id=\"state\" name=\"state\" ng-model=\"state\">\n" +
+    "                <option selected disabled value=\"\">State</option>\n" +
+    "                <option value=\"AK\">Alaska</option>\n" +
+    "                <option value=\"AL\">Alabama</option>\n" +
+    "                <option value=\"AR\">Arkansas</option>\n" +
+    "                <option value=\"AZ\">Arizona</option>\n" +
+    "                <option value=\"CA\">California</option>\n" +
+    "                <option value=\"CO\">Colorado</option>\n" +
+    "                <option value=\"CT\">Connecticut</option>\n" +
+    "                <option value=\"DC\">District of Columbia</option>\n" +
+    "                <option value=\"DE\">Delaware</option>\n" +
+    "                <option value=\"FL\">Florida</option>\n" +
+    "                <option value=\"GA\">Georgia</option>\n" +
+    "                <option value=\"HI\">Hawaii</option>\n" +
+    "                <option value=\"IA\">Iowa</option>\n" +
+    "                <option value=\"ID\">Idaho</option>\n" +
+    "                <option value=\"IL\">Illinois</option>\n" +
+    "                <option value=\"IN\">Indiana</option>\n" +
+    "                <option value=\"KS\">Kansas</option>\n" +
+    "                <option value=\"KY\">Kentucky</option>\n" +
+    "                <option value=\"LA\">Louisiana</option>\n" +
+    "                <option value=\"MA\">Massachusetts</option>\n" +
+    "                <option value=\"MD\">Maryland</option>\n" +
+    "                <option value=\"ME\">Maine</option>\n" +
+    "                <option value=\"MI\">Michigan</option>\n" +
+    "                <option value=\"MN\">Minnesota</option>\n" +
+    "                <option value=\"MO\">Missouri</option>\n" +
+    "                <option value=\"MS\">Mississippi</option>\n" +
+    "                <option value=\"MT\">Montana</option>\n" +
+    "                <option value=\"NC\">North Carolina</option>\n" +
+    "                <option value=\"ND\">North Dakota</option>\n" +
+    "                <option value=\"NE\">Nebraska</option>\n" +
+    "                <option value=\"NH\">New Hampshire</option>\n" +
+    "                <option value=\"NJ\">New Jersey</option>\n" +
+    "                <option value=\"NM\">New Mexico</option>\n" +
+    "                <option value=\"NV\">Nevada</option>\n" +
+    "                <option value=\"NY\">New York</option>\n" +
+    "                <option value=\"OH\">Ohio</option>\n" +
+    "                <option value=\"OK\">Oklahoma</option>\n" +
+    "                <option value=\"OR\">Oregon</option>\n" +
+    "                <option value=\"PA\">Pennsylvania</option>\n" +
+    "                <option value=\"PR\">Puerto Rico</option>\n" +
+    "                <option value=\"RI\">Rhode Island</option>\n" +
+    "                <option value=\"SC\">South Carolina</option>\n" +
+    "                <option value=\"SD\">South Dakota</option>\n" +
+    "                <option value=\"TN\">Tennessee</option>\n" +
+    "                <option value=\"TX\">Texas</option>\n" +
+    "                <option value=\"UT\">Utah</option>\n" +
+    "                <option value=\"VA\">Virginia</option>\n" +
+    "                <option value=\"VT\">Vermont</option>\n" +
+    "                <option value=\"WA\">Washington</option>\n" +
+    "                <option value=\"WI\">Wisconsin</option>\n" +
+    "                <option value=\"WV\">West Virginia</option>\n" +
+    "                <option value=\"WY\">Wyoming</option>\n" +
+    "              </select>\n" +
+    "            </div>\n" +
+    "            <div class=\"col-md-6\">\n" +
+    "              <label>Country</label>\n" +
+    "              <select class=\"form-control\" name=\"country\" ng-model=\"country\">\n" +
+    "                <option selected disabled value=\"\">Country</option>\n" +
+    "                <option value=\"US\">United States</option>\n" +
+    "              </select>\n" +
+    "            </div>\n" +
+    "          </div>\n" +
+    "        </div>-->\n" +
+    "        <br>\n" +
+    "        <div class=\"row\">\n" +
+    "          <div class=\"col-md-11\">\n" +
+    "            <button type=\"submit\" class=\"btn btn-primary pull-right\">Submit</button>\n" +
+    "          </div>\n" +
+    "          <div class=\"col-md-1\">\n" +
+    "            <a ui-sref=\"main.account\" class=\"btn btn-danger pull-right\" role=\"button\">Cancel</a>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "    </form>\n" +
     "  </div>\n" +
     "</div>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
     "\n" +
     "");
 }]);

@@ -27,7 +27,7 @@ module.exports = function ( karma ) {
       'src/assets/**/*.js'
     ],
     frameworks: [ 'jasmine' ],
-    plugins: [ 'karma-jasmine', 'karma-firefox-launcher', 'karma-coffee-preprocessor' ],
+    plugins: [ 'karma-jasmine', 'karma-firefox-launcher', 'karma-coffee-preprocessor','karma-chrome-launcher' ],
     preprocessors: {
       '**/*.coffee': 'coffee',
     },
@@ -35,7 +35,7 @@ module.exports = function ( karma ) {
     /**
      * How to report, by default.
      */
-    reporters: 'dots',
+    reporters: ['progress'],
 
     /**
      * On which port should the browser connect, on which port is the test runner
@@ -64,7 +64,7 @@ module.exports = function ( karma ) {
      * the aesthetic advantage of not launching a browser every time you save.
      */
     browsers: [
-      'Firefox'
+      'Chrome'
     ]
   });
 };

@@ -44,7 +44,7 @@ angular.module('ngBoilerplate.account', ['ui.router', 'ngResource', 'base64'])
         "&password=" + data.password, {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         } ).then(function(data) {
-            alert("login successful came in");
+            alert("in totally inside");
             localStorage.setItem("session", {});
         }, function(data) {
             alert("error logging in");
@@ -101,7 +101,7 @@ angular.module('ngBoilerplate.account', ['ui.router', 'ngResource', 'base64'])
             });
         },
         function() {
-            alert("Error logging in user");
+            alert("Error logging in prudveer");
         });
     };
 })
